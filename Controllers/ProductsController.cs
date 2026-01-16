@@ -25,6 +25,18 @@ public class ProductsController : Controller {
     // localhost:5022/products/details
     public ActionResult Details()
     {
+        string urunBaslik = "Samsung S24 Ultra";
+        string urunAciklama = "Samsung Galaxy S24 Ultra 512 GB 12 GB Ram (Samsung Türkiye Garantili) Siyah";
+        double urunFiyat = 12.999;
+        string urunResim = "samsung-s24.jpg";
+        bool urunSatistami = false;
+
+        ViewData["UrunBaslik"] = urunBaslik;
+        ViewData["UrunAciklama"] = urunAciklama;
+        ViewData["UrunFiyat"] = urunFiyat;
+        ViewData["UrunResim"] = urunResim;
+        ViewData["UrunSatistami"] = urunSatistami;
+
         return View(); // Views/Products/Details
     }
 
