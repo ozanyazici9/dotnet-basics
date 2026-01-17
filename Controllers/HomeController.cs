@@ -8,7 +8,6 @@ public class HomeController : Controller
     {
         int sayi1 = 10;
         int sayi2 = 20;
-        int urunFiyat = 5000;
 
         sayi1 = 30;
         sayi2 = 40;
