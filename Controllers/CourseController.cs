@@ -12,7 +12,14 @@ public class CourseController : Controller
 
     public ActionResult List()
     {
-        return View(); // Views/Course/List
+        // Course[] kurslar = [kurs1, kurs2];
+
+        List<Course> kurslar = new List<Course>{
+            new Course { Title = "Javascript Kursu", Image = "1.jpg", IsActive = false },
+            new Course { Title = "React Kursu", Image = "2.jpg", IsActive = true }
+        };
+
+        return View(kurslar); // Views/Course/List
     }
 
     public ActionResult Details() 

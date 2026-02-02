@@ -1,19 +1,28 @@
+@model Product
+
 <h1>Products/Details</h1>
 
 <div class="row">
     <div class="col-4">
-        <img src="~/img/@ViewData["urunResim"]" alt="" class="img-fluid"/>
+        <img src="~/img/@Model.urunResim" alt="" class="img-fluid"/>
     </div>
     <div class="col-8">
         <h1>@ViewData["urunBaslik"]</h1>
         <p>
-            @ViewData["urunAciklama"]
+            @Model.urunAciklama
         </p>
         <p>
-            Fiyat: @ViewData["urunFiyat"] ₺
+            Fiyat: @Model.urunFiyat ₺
         </p>
-        <p>
-            Stok: @ViewData["urunSatistami"]
-        </p>
+
+        @if ( Model.urunSatistami && Model.stokAdedi > 0 ) {
+            <p>
+                Stok Durumu: <strong>Stokta Var</strong>
+            </p>
+        } else {
+            <p>
+                Stok Durumu: <strong>Stokta Yok</strong>
+            </p>
+        }
     </div>
 </div>

@@ -1,1 +1,27 @@
+@* @model Course[] *@
+@model List<Course>
+
 <h1>Course/List</h1>
+
+<div class="row">
+
+    @foreach ( Course kurs in Model ) 
+    {
+        <div class="col">
+        <div class="card">
+            <img src="~/img/@kurs.Image" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">@kurs.Title</h5>
+                @if ( !kurs.IsActive ) 
+                {
+                    <p class="card-text">Aktif Değil </p>
+                } else {
+                    <p class="card-text">Aktif</p>
+                }
+                <a href="#" class="card-link">İncele</a>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
