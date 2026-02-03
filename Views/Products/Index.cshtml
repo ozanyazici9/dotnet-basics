@@ -1,12 +1,15 @@
-@model string[]
+@model List<Product>
 
 <h1>Products/Index</h1>
 
-<ul>
+<div class="row">
+    @foreach (Product urun in Model) 
+     {
+        if (urun.IsHome) {
+            <div class="col-md-3">
+                @await Html.PartialAsync("_ProductCard", urun)
+            </div>
+        }
+     }
+</div>
 
-@foreach (string kurs in Model) 
-{
-    <li> @kurs </li>
-}
-
-</ul>

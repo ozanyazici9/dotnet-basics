@@ -13,4 +13,5 @@ namespace dotnet_basics.Models;
         public string? urunResim { get; set; }
         public bool urunSatistami { get; set; }
         public int stokAdedi { get; set; }
+        public bool IsHome { get; set; }
     }

@@ -3,23 +3,12 @@
 <h1>Products/List</h1>
 
 <div class="row">
-    @foreach ( Product urun in Model ) {
 
-    
-        <div class="col-6">
-        <div class="card mb-3">
-            <img src="~/img/@urun.urunResim" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">@urun.urunBaslik</h5>
-                <p class="card-text">@urun.urunFiyat</p>
-                @if ( !urun.urunSatistami ) {
-                    <p class="card-text">Stok: Satışta Değil</p>
-                }
-                <a href="#" class="card-link">İncele</a>
-            </div>
+    @foreach ( Product urun in Model ) 
+    {
+        <div class="col-md-4">
+            @await Html.PartialAsync("_ProductCard", urun)
         </div>
-    </div>
     
     }
-
 </div>
