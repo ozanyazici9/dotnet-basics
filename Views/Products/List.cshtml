@@ -6,9 +6,12 @@
 
     @foreach ( Product urun in Model ) 
     {
-        <div class="col-md-4">
-            @await Html.PartialAsync("_ProductCard", urun)
-        </div>
-    
+        if (urun.UrunSatistami) 
+        {
+            <div class="col-md-4">
+                @await Html.PartialAsync("_ProductCard", urun)
+            </div>
+        }
+
     }
 </div>

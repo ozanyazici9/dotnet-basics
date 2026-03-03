@@ -1,10 +1,13 @@
 @model Product
 
-<div class="card mb-4">
-    <img src="~/img/@Model.urunResim" class="card-img-top" alt="">
-    <div class="card-body">
-        <h5 class="card-title">@Model.urunBaslik</h5>
-        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-        <a class="btn btn-secondary" href="#">İncele</a>
+<div class="card mb-4 shadow">
+    <img src="~/img/@Model.UrunResim" class="card-img-top p-3 pt-0 " alt="">
+    <div class="col-md-12">
+        <div class="card-body bg-light">
+            <h5 class="card-title">@Model.UrunBaslik</h5>
+            <p class="card-text">@Model.UrunAciklama</p>
+        <a class="btn btn-outline-secondary d-flex justify-content-center align-items-center" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">İncele</a>
+        </div>
     </div>
+    
 </div>

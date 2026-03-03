@@ -6,16 +6,15 @@ namespace dotnet_basics.Controllers;
 public class CourseController : Controller
 {
 
-    List<Course> kurslar = new List<Course>
-    {
-        new Course { Title = "Javascript Kursu", Image = "1.jpg", IsActive = false, IsHome = true },
-        new Course { Title = "Python Kursu", Image = "2.jpg", IsActive = true, IsHome = true },
-        new Course { Title = "Django Kursu", Image = "3.jpg", IsActive = true, IsHome = false },
-        new Course { Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = true },
-        new Course { Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = false },
-        new Course { Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = true },
-        new Course { Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = false },
-    };
+    List<Course> kurslar = [
+        new Course { Id = 1, Title = "Javascript Kursu", Image = "1.jpg", IsActive = false, IsHome = true },
+        new Course { Id = 2, Title = "Python Kursu", Image = "2.jpg", IsActive = true, IsHome = true },
+        new Course { Id = 3, Title = "Django Kursu", Image = "3.jpg", IsActive = true, IsHome = false },
+        new Course { Id = 4, Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = true },
+        new Course { Id = 5, Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = false },
+        new Course { Id = 6, Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = true },
+        new Course { Id = 7, Title = "Angular Kursu", Image = "4.jpg", IsActive = false, IsHome = false },
+    ];
 
 
     public ActionResult Index()
@@ -31,11 +30,9 @@ public class CourseController : Controller
         return View(kurslar); // Views/Course/List
     }
 
-    public ActionResult Details() 
+    public ActionResult Details(int id) 
     {
-        Course kurs1 = new Course();
-        kurs1.Title = "Django kursu";
-        kurs1.Image = "1.jpg";
-        return View(kurs1); // Views/Course/Details
+        Course? kurs = kurslar.FirstOrDefault(x => x.Id == id);
+        return View(kurs); // Views/Course/Details
     }
 }
